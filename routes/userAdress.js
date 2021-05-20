@@ -13,7 +13,7 @@ router.get('/', async (req,res)=>{
 })
 
 //Getting one
-router.get('/:id', getuserAdress, (req,res)=>{
+router.get('/:id', getUserAdress, (req,res)=>{
     res.send(res.userAdress)
 })
 
@@ -57,7 +57,7 @@ router.delete('/:id', getUserAdress, async (req,res)=>{
     }
 })
 
-async function getuserAdress (req, res, next) {
+async function getUserAdress (req, res, next) {
     let userAdress
     try{
         userAdress = await UserAdress.findById(req.params.id)
